@@ -50,6 +50,9 @@
                     <button wire:click='removeComment({{ $comment->id }})' class="text-red-500 font-bold">x</button>
                 </div>
                 <p class="py-4">{{ $comment->body }}</p>
+                @if ($comment->image)
+                    <img class="pb-4" src="{{ asset($comment->imagePath) }}" alt={{ $comment->body }}>
+                @endif
             </div>
         @endforeach
 
